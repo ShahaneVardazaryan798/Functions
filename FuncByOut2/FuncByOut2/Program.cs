@@ -23,7 +23,7 @@ namespace FuncByOut2
             arr = new int[10];
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = rd.Next(-100, 100);
+                arr =new int[10]{15, 10, 12, 15,8,10,45,78,36,0 };
                 Write("Arr = " + arr[i]+"\t");
             }
             
@@ -32,29 +32,36 @@ namespace FuncByOut2
             {
                 if(arr[i]==n)
                 {
-                    count = 0;
+                    
                     count++;
                 }
                 
             }
-            WriteLine("Count = " + count);
+            WriteLine("\n"+"Count = " + count);
             int index = 0;
             for (int i = 0; i<arr.Length; i++)
             {
                 if(arr[i]==n)
                 {
-                    index = i;
-                   
+                    index = i+1;
+                    count--;
+                    do
+                    {
+                        WriteLine("Index = " + index);
+                        break;
+                       
+                    } while (count==0) ;
+                  
                 }
                 else
                 {
                     index = -1;
                 }
-
+               
             }
-            WriteLine("Index = " + index);
-
+           
             return index;
+            ReadLine();
         }
     }
 }
